@@ -6,18 +6,19 @@
     <title>RDB STORE — RDBMATE OFFICIAL MERCH</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
     <style>
-        /* Hide body until Jersey 10 is ready — prevents FOUT */
-        body { visibility: hidden; }
+        /* Font loads async, body visible immediately */
     </style>
     <script>
-        // Show body as soon as Jersey 10 font is loaded
+        // Show body immediately, don't wait for font
+        document.body.style.visibility = 'visible';
+        // Also ensure on fonts ready
         document.fonts.ready.then(function() {
             document.body.style.visibility = 'visible';
         });
-        // Fallback: show after 800ms max regardless
-        setTimeout(function(){ document.body.style.visibility = 'visible'; }, 800);
+        // Extra fallback
+        setTimeout(function(){ document.body.style.visibility = 'visible'; }, 300);
     </script>
     <style>
         :root {
@@ -33,6 +34,227 @@
             --accent2: #ff4747;
             --green: #39ff7a;
         }
+
+        /* ===== LIGHT MODE ===== */
+        body.light-mode {
+            --bg: #f0f0f0;
+            --bg2: #ffffff;
+            --bg3: #e8e8e8;
+            --border: #d0d0d0;
+            --border2: #bbbbbb;
+            --white: #111111;
+            --zinc: #555555;
+            --zinc2: #888888;
+            --accent: #cb0004;
+            --accent2: #ff4747;
+            --green: #00aa44;
+        }
+
+        body.light-mode nav {
+            background: rgba(240,240,240,0.95);
+        }
+
+        /* Logo dark bg in light mode */
+        body.light-mode #heroLogoWrap {
+            background: #111111;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        /* ===== BURGER MENU ===== */
+        .nav-mobile-right {
+            display: none;
+            align-items: center;
+            gap: 8px;
+        }
+        .burger-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 0;
+        }
+        .burger-btn span {
+            display: block;
+            width: 20px;
+            height: 1.5px;
+            background: var(--zinc);
+            transition: all 0.25s;
+        }
+        .burger-btn.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); background: var(--white); }
+        .burger-btn.open span:nth-child(2) { opacity: 0; }
+        .burger-btn.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); background: var(--white); }
+        .burger-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 198;
+        }
+        .burger-overlay.open { display: block; }
+        .burger-drawer {
+            position: fixed;
+            top: 56px;
+            right: 0;
+            width: 220px;
+            background: var(--bg2);
+            border-left: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            z-index: 199;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+        }
+        .burger-drawer.open { transform: translateX(0); }
+        .burger-drawer-inner { display: flex; flex-direction: column; padding: 8px 0; }
+        .burger-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            font-family: 'Jersey 10', sans-serif;
+            font-size: 13px;
+            letter-spacing: 3px;
+            color: var(--zinc);
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+            text-align: left;
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+        }
+        .burger-item:last-child { border-bottom: none; }
+        .burger-item:hover { color: var(--white); background: var(--bg3); }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border2);
+            color: var(--zinc);
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s, border-color 0.2s;
+            position: relative;
+        }
+        .theme-toggle:hover { color: var(--white); border-color: var(--white); }
+
+        /* ===== NAV SEARCH ===== */
+        .nav-search-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .nav-search-wrap svg {
+            position: absolute;
+            left: 10px;
+            pointer-events: none;
+        }
+        .nav-search-input {
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--white);
+            font-family: 'Jersey 10', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 7px 30px 7px 32px;
+            outline: none;
+            width: 200px;
+            transition: border-color 0.2s, width 0.3s;
+        }
+        .nav-search-input:focus { border-color: var(--accent); width: 240px; }
+        .nav-search-input::placeholder { color: var(--zinc2); }
+        .nav-search-clear {
+            position: absolute;
+            right: 8px;
+            background: none;
+            border: none;
+            color: var(--zinc2);
+            cursor: pointer;
+            font-size: 13px;
+            line-height: 1;
+            display: none;
+        }
+
+        /* About page mobile */
+        @media (max-width: 600px) {
+            .about-stats-grid { grid-template-columns: 1fr !important; }
+            #aboutPage > div:first-child { padding: 32px 20px 60px !important; }
+        }
+        #aboutPage {
+            display: none;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--white);
+        }
+        #aboutPage.visible { display: block; }
+        .about-hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 40px 80px;
+            text-align: center;
+        }
+        .about-eyebrow {
+            font-family: 'Jersey 10', sans-serif;
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+        .about-title {
+            font-family: 'Jersey 10', sans-serif;
+            font-size: clamp(48px, 7vw, 90px);
+            line-height: 0.95;
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+        }
+        .about-desc {
+            font-family: 'Jersey 10', sans-serif;
+            font-size: 20px;
+            color: var(--zinc);
+            line-height: 1.7;
+            max-width: 560px;
+            margin: 0 auto 48px;
+        }
+        .about-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--accent);
+            margin: 0 auto 48px;
+        }
+        .about-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .about-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border2);
+            color: var(--white);
+            font-family: 'Jersey 10', sans-serif;
+            font-size: 14px;
+            letter-spacing: 3px;
+            padding: 12px 28px;
+            text-decoration: none;
+            transition: all 0.2s;
+            background: none;
+            cursor: pointer;
+        }
+        .about-link-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .about-link-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+        .about-link-btn.primary:hover { background: var(--white); border-color: var(--white); color: #000; }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { overflow-x: hidden; max-width: 100%; }
@@ -1626,6 +1848,10 @@
             /* Nav */
             nav { height: 56px; padding: 0 16px; }
             .nav-logo { font-size: 22px; letter-spacing: 3px; }
+            .nav-search-input { width: 120px; font-size: 11px; padding: 6px 28px 6px 28px; }
+            .nav-search-input:focus { width: 140px; }
+            .nav-right { display: none !important; }
+            .nav-mobile-right { display: flex; }
 
             /* Hero */
             .hero { padding: 28px 16px 40px; gap: 24px; }
@@ -1774,16 +2000,33 @@
 
     <!-- NAV -->
     <nav>
-        <a href="#" class="nav-logo">
+        <a href="#" class="nav-logo" onclick="showMainSite(); return false;">
             RDB STORE
-            <span>2026</span>
         </a>
-        <ul class="nav-links">
-            <li><a href="#collection">MERCH</a></li>
-            <li><a href="https://www.youtube.com/@RDBMate" target="_blank">YOUTUBE</a></li>
-            <li><a href="#about">ABOUT</a></li>
-        </ul>
-        <div class="nav-right">
+        <div class="nav-search-wrap">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--zinc2)" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input
+                type="text"
+                id="productSearchInput"
+                class="nav-search-input"
+                placeholder="SEARCH PRODUCTS..."
+                oninput="searchProducts(this.value)"
+                onfocus="showMainSite()"
+            >
+            <button onclick="clearSearch()" id="searchClearBtn" class="nav-search-clear">✕</button>
+        </div>
+        <div class="nav-right" id="navRight">
+            <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle theme">
+                <svg id="themeIconDark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:block;">
+                    <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg id="themeIconLight" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                </svg>
+            </button>
+            <button onclick="showAbout()" class="nav-icon-btn" title="About" style="font-family:'Jersey 10',sans-serif;font-size:11px;letter-spacing:2px;color:var(--zinc);width:auto;padding:0 4px;">ABOUT</button>
             <a href="https://www.youtube.com/@RDBMate" target="_blank" class="nav-icon-btn" title="YouTube">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M22.54 6.42a2.78 2.78 0 00-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 2A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-2A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
@@ -1797,36 +2040,54 @@
                 <span class="cart-badge" id="cartBadge">0</span>
             </button>
         </div>
+        <!-- Mobile: cart + burger -->
+        <div class="nav-mobile-right">
+            <button class="nav-icon-btn" onclick="openCart()" title="Cart" style="position:relative;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                </svg>
+                <span class="cart-badge" id="cartBadgeMobile">0</span>
+            </button>
+            <button class="burger-btn" id="burgerBtn" onclick="toggleBurger()" title="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="hero">
-        <div>
-            <span class="hero-tag">RDBMATE // OFFICIAL COLLECTIBLES</span>
-            <h1>
-                UPGRADE YOUR
-                <span class="accent-word">COLLECTION</span>
-            </h1>
-            <p class="hero-desc">
-                Official RDBMate merch — limited drop collectibles, gear, and accessories for the community.
-            </p>
-            <a href="#collection" class="hero-cta">
-                EXPLORE THE DROP
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+    <!-- BURGER DRAWER -->
+    <div class="burger-overlay" id="burgerOverlay" onclick="closeBurger()"></div>
+    <div class="burger-drawer" id="burgerDrawer">
+        <div class="burger-drawer-inner">
+            <button onclick="toggleTheme(); closeBurger();" class="burger-item">
+                <span id="burgerThemeIcon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                </span>
+                <span id="burgerThemeLabel">LIGHT MODE</span>
+            </button>
+            <button onclick="showAbout(); closeBurger();" class="burger-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                ABOUT
+            </button>
+            <a href="https://www.youtube.com/@RDBMate" target="_blank" class="burger-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22.54 6.42a2.78 2.78 0 00-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 2A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-2A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+                    <path d="M10 15l5-3-5-3v6z" fill="currentColor" stroke="none"/>
                 </svg>
+                YOUTUBE
             </a>
         </div>
-        <div class="hero-visual">
-            <div id="heroLogoWrap" style="display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1;max-width:480px;margin-left:auto;animation:float 6s ease-in-out infinite;">
-                <img id="heroLogoImg" src="" alt="RDBMATE Logo" style="display:none;width:90%;height:90%;object-fit:contain;">
-                <svg id="heroLogoSvg" width="160" height="160" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                    <rect x="4" y="4" width="16" height="16" rx="2"/>
-                    <path d="M9 9h.01M15 9h.01M8 14s1.5 2 4 2 4-2 4-2"/>
-                </svg>
-            </div>
+    </div>
+
+    <!-- LOGO DISPLAY -->
+    <div style="display:flex;justify-content:center;padding:40px 40px 20px;">
+        <div id="heroLogoWrap" style="display:flex;align-items:center;justify-content:center;width:min(320px,70vw);height:min(320px,70vw);animation:float 6s ease-in-out infinite;">
+            <img id="heroLogoImg" src="" alt="RDBMATE Logo" style="display:none;width:100%;height:100%;object-fit:contain;">
+            <svg id="heroLogoSvg" width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                <path d="M9 9h.01M15 9h.01M8 14s1.5 2 4 2 4-2 4-2"/>
+            </svg>
         </div>
-    </header>
+    </div>
 
     <!-- PRODUCTS -->
     <main id="collection">
@@ -1837,26 +2098,7 @@
             <span class="section-meta">SHIPS GLOBAL FROM THE NODE</span>
         </div>
 
-        <!-- SEARCH BAR -->
-        <div style="margin-bottom:28px;position:relative;max-width:480px;">
-            <div style="position:relative;display:flex;align-items:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--zinc2)" stroke-width="2" style="position:absolute;left:14px;pointer-events:none;">
-                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-                </svg>
-                <input
-                    type="text"
-                    id="productSearchInput"
-                    placeholder="SEARCH PRODUCTS..."
-                    oninput="searchProducts(this.value)"
-                    style="width:100%;background:var(--bg2);border:1px solid var(--border2);color:var(--white);font-family:'Jersey 10',sans-serif;font-size:14px;letter-spacing:2px;padding:12px 40px 12px 42px;outline:none;transition:border-color 0.2s;"
-                    onfocus="this.style.borderColor='var(--accent)'"
-                    onblur="this.style.borderColor='var(--border2)'"
-                >
-                <button onclick="clearSearch()" id="searchClearBtn" style="display:none;position:absolute;right:12px;background:none;border:none;color:var(--zinc2);cursor:pointer;font-size:16px;line-height:1;">✕</button>
-            </div>
-            <div id="searchResultInfo" style="font-family:'Jersey 10',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:2px;margin-top:8px;display:none;"></div>
-        </div>
-
+        <div id="searchResultInfo" style="font-family:'Jersey 10',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:2px;margin-bottom:16px;display:none;"></div>
         <div class="products-grid" id="productsGrid">
             <!-- Products rendered by JS -->
         </div>
@@ -1879,7 +2121,97 @@
 
 </div>
 
-<!-- ===================== CART SIDEBAR ===================== -->
+<!-- ===================== ABOUT PAGE ===================== -->
+<div id="aboutPage">
+    <div style="max-width:780px;margin:0 auto;padding:60px 40px 100px;">
+
+        <!-- Eyebrow -->
+        <div style="font-family:'Jersey 10',sans-serif;font-size:11px;letter-spacing:5px;color:var(--accent);margin-bottom:20px;">RDBMATE // OFFICIAL COLLECTIBLES</div>
+
+        <!-- Title -->
+        <h1 style="font-family:'Jersey 10',sans-serif;font-size:clamp(42px,6vw,80px);line-height:0.95;letter-spacing:2px;margin-bottom:20px;">
+            UPGRADE YOUR<br><span style="color:var(--accent);">COLLECTION</span>
+        </h1>
+        <p style="font-family:'Jersey 10',sans-serif;font-size:18px;color:var(--zinc);line-height:1.7;margin-bottom:48px;">
+            Official RDBMate merch — limited drop collectibles, gear, and accessories for the community.
+        </p>
+
+        <!-- Divider -->
+        <div style="width:100%;height:1px;background:var(--border);margin-bottom:48px;"></div>
+
+        <!-- Article header -->
+        <div style="font-family:'Jersey 10',sans-serif;font-size:10px;letter-spacing:4px;color:var(--zinc2);margin-bottom:12px;">// THE STORY BEHIND THE BRAND</div>
+        <h2 style="font-family:'Jersey 10',sans-serif;font-size:clamp(28px,4vw,48px);letter-spacing:2px;margin-bottom:32px;line-height:1.1;">
+            AHMAD SHOAIB<br><span style="color:var(--zinc);font-size:0.55em;letter-spacing:4px;">CEO &amp; FOUNDER — RDBMATE</span>
+        </h2>
+
+        <!-- Article body -->
+        <div style="font-family:'Jersey 10',sans-serif;font-size:17px;color:var(--zinc);line-height:1.9;display:flex;flex-direction:column;gap:24px;">
+
+            <p>Ahmad Shoaib is the founder and chief executive of RDBMate — a digital-first content platform and collectibles brand built from the ground up with nothing but a camera, a vision, and an obsessive attention to community. What started as a small YouTube channel quickly became a movement, drawing in thousands of viewers who shared the same love for rare gear, limited collectibles, and authentic creative culture.</p>
+
+            <p>Born with a builder's mindset, Shoaib launched RDBMate not just as a channel, but as a universe — one where content, merchandise, and community exist on the same plane. He believed early on that the people who showed up every day to watch, comment, and engage deserved more than just videos. They deserved something they could hold. Something real. That belief became RDB Store.</p>
+
+            <p>Under Shoaib's leadership, RDB Store has grown into an official merch operation with limited-drop collectibles, branded gear, and exclusive accessories — each item designed to reflect the aesthetic and energy of the RDBMate identity. No mass production. No generic templates. Every drop is intentional, every piece is crafted for the community that made the brand possible.</p>
+
+            <p style="color:var(--white);">"I don't make merch to sell product. I make it to give the community something they actually want to own." — Ahmad Shoaib</p>
+
+            <p>Outside of building the brand, Shoaib is known for being deeply involved in every layer of the operation — from product design and shoot direction to community feedback loops. He treats every subscriber and customer as a co-creator of the RDBMate story, not just an audience member.</p>
+
+            <p>RDB Store is the physical extension of that philosophy — a limited-run, high-intent merchandise platform where every drop matters and nothing sits on a shelf forever.</p>
+
+        </div>
+
+        <!-- Divider -->
+        <div style="width:100%;height:1px;background:var(--border);margin:48px 0;"></div>
+
+        <!-- Stats row -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:48px;" class="about-stats-grid">
+            <div style="background:var(--bg2);border:1px solid var(--border);padding:24px 20px;">
+                <div style="font-family:'Jersey 10',sans-serif;font-size:36px;color:var(--accent);letter-spacing:2px;">2027</div>
+                <div style="font-family:'Jersey 10',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:3px;margin-top:4px;">BRAND FOUNDED</div>
+            </div>
+            <div style="background:var(--bg2);border:1px solid var(--border);padding:24px 20px;">
+                <div style="font-family:'Jersey 10',sans-serif;font-size:36px;color:var(--accent);letter-spacing:2px;">LIMITED</div>
+                <div style="font-family:'Jersey 10',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:3px;margin-top:4px;">DROP ONLY</div>
+            </div>
+            <div style="background:var(--bg2);border:1px solid var(--border);padding:24px 20px;">
+                <div style="font-family:'Jersey 10',sans-serif;font-size:36px;color:var(--accent);letter-spacing:2px;">GLOBAL</div>
+                <div style="font-family:'Jersey 10',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:3px;margin-top:4px;">SHIPS WORLDWIDE</div>
+            </div>
+        </div>
+
+        <!-- CTA buttons -->
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <a href="https://www.youtube.com/@RDBMate" target="_blank" class="about-link-btn primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22.54 6.42a2.78 2.78 0 00-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 2A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-2A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+                    <path d="M10 15l5-3-5-3v6z" fill="currentColor" stroke="none"/>
+                </svg>
+                YOUTUBE
+            </a>
+            <button class="about-link-btn" onclick="showMainSite()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                BROWSE MERCH
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:var(--bg2);border-top:1px solid var(--border);padding:32px 40px;">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">RDB STORE</div>
+                <div class="footer-copy" style="margin-top:6px;">OFFICIAL MERCHANDISE // RDBMATE PLATFORM</div>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.youtube.com/@RDBMate" target="_blank">YOUTUBE</a>
+                <a href="#" onclick="showMainSite(); return false;">MERCH</a>
+            </div>
+        </div>
+    </footer>
+</div>
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-sidebar" id="cartSidebar">
     <div class="cart-head">
@@ -2627,13 +2959,11 @@
 <div class="toast" id="toast"></div>
 
 <!-- ===================== SCRIPT ===================== -->
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getDatabase, ref, set, remove, onValue, get, push }
-        from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-    import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged }
-        from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
+<!-- Firebase compat CDN -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script>
     // ===== FIREBASE CONFIG =====
     const firebaseConfig = {
         apiKey: "AIzaSyDk5WuV2QlFOJaLTJqmDN6Da73FEofVi_A",
@@ -2646,13 +2976,20 @@
         databaseURL: "https://rdb-store-default-rtdb.firebaseio.com"
     };
 
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
-    const auth = getAuth(app);
-    const PRODUCTS_REF = ref(db, "rdb_products");
-    const PROMOS_REF   = ref(db, "rdb_promos");
-    const ORDERS_REF   = ref(db, "rdb_orders");
-    const SETTINGS_ADMIN_REF = ref(db, "rdb_admin_settings");
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+    const auth = firebase.auth();
+    const PRODUCTS_REF = db.ref("rdb_products");
+    const PROMOS_REF   = db.ref("rdb_promos");
+    const ORDERS_REF   = db.ref("rdb_orders");
+    const SETTINGS_ADMIN_REF = db.ref("rdb_admin_settings");
+
+    // Compat wrappers to match modular API usage below
+    function onValue(ref, cb, errCb) { ref.on('value', snap => cb(snap), errCb); }
+    function get(ref) { return ref.once('value'); }
+    function set(ref, val) { return ref.set(val); }
+    function remove(ref) { return ref.remove(); }
+    function push(ref, val) { return val !== undefined ? ref.push(val) : ref.push(); }
 
     // ===== IMGBB IMAGE UPLOAD =====
     const _ik = atob('NjI5NDM0YjdhNzM0MDU1ZDRmYmEzMTE1NTc3MzMzNmU=');
@@ -2726,22 +3063,22 @@
 
     // ===== FIREBASE SAVE/REMOVE =====
     async function saveProduct(p) {
-        try { await set(ref(db, "rdb_products/" + p.id), p); }
+        try { await set(db.ref("rdb_products/" + p.id), p); }
         catch(e) { console.error(e); showToast('⚠ SAVE FAILED', true); }
     }
     async function removeProductFromDB(id) {
-        try { await remove(ref(db, "rdb_products/" + id)); }
+        try { await remove(db.ref("rdb_products/" + id)); }
         catch(e) { console.error(e); showToast('⚠ DELETE FAILED', true); }
     }
     async function saveAllProducts(arr) {
-        for (const p of arr) await set(ref(db, "rdb_products/" + p.id), p);
+        for (const p of arr) await set(db.ref("rdb_products/" + p.id), p);
     }
     async function savePromo(pr) {
-        try { await set(ref(db, "rdb_promos/" + pr.code), pr); }
+        try { await set(db.ref("rdb_promos/" + pr.code), pr); }
         catch(e) { console.error(e); showToast('⚠ SAVE FAILED', true); }
     }
     async function removePromoFromDB(code) {
-        try { await remove(ref(db, "rdb_promos/" + code)); }
+        try { await remove(db.ref("rdb_promos/" + code)); }
         catch(e) { console.error(e); showToast('⚠ DELETE FAILED', true); }
     }
 
@@ -2933,7 +3270,10 @@
         }
 
         const badge = document.getElementById('cartBadge');
-        badge.textContent = cart.reduce((s,x) => s+x.qty, 0);
+        const total = cart.reduce((s,x) => s+x.qty, 0);
+        badge.textContent = total;
+        const mobileBadge = document.getElementById('cartBadgeMobile');
+        if (mobileBadge) mobileBadge.textContent = total;
 
         const itemsEl = document.getElementById('cartItems');
         const emptyEl = document.getElementById('cartEmpty');
@@ -2990,7 +3330,7 @@
         if (!p) return;
         // increment view count
         const newViews = (p.views || 0) + 1;
-        set(ref(db, 'rdb_products/' + id + '/views'), newViews).catch(()=>{});
+        set(db.ref('rdb_products/' + id + '/views'), newViews).catch(()=>{});
         modalProduct = p;
         modalQty = 1;
         modalSize = p.sizes[0];
@@ -3302,7 +3642,7 @@
         errEl.textContent = '...';
         errEl.style.display = 'block';
         try {
-            await signInWithEmailAndPassword(auth, email, password);
+            await auth.signInWithEmailAndPassword(email, password);
             errEl.style.display = 'none';
             closeLoginModal();
             openAdmin();
@@ -3319,7 +3659,7 @@
     }
     function exitAdmin() {
         document.getElementById('adminPanel').classList.remove('visible');
-        signOut(auth).catch(()=>{});
+        auth.signOut().catch(()=>{});
     }
 
     // ===== ADMIN PAGES =====
@@ -3369,9 +3709,9 @@
 
             // Estimate Firebase data size by fetching all nodes
             const [pSnap, oSnap, sSnap] = await Promise.all([
-                get(ref(db, 'rdb_products')),
-                get(ref(db, 'rdb_orders')),
-                get(ref(db, 'rdb_settings'))
+                get(db.ref('rdb_products')),
+                get(db.ref('rdb_orders')),
+                get(db.ref('rdb_settings'))
             ]);
             const totalJson =
                 JSON.stringify(pSnap.val() || {}) +
@@ -3424,7 +3764,7 @@
         if (!checked.length) { showToast('⚠ NONE SELECTED', true); return; }
         if (!confirm('DELETE ' + checked.length + ' PRODUCTS?')) return;
         for (const cb of checked) {
-            await remove(ref(db, 'rdb_products/' + cb.dataset.id));
+            await remove(db.ref('rdb_products/' + cb.dataset.id));
         }
         showToast('✓ ' + checked.length + ' DELETED');
     }
@@ -3673,10 +4013,10 @@
     }
 
     // ===== SETTINGS / LOGO =====
-    const SETTINGS_REF = ref(db, "rdb_settings");
+    const SETTINGS_REF = db.ref("rdb_settings");
 
     // ===== LOAD HASHED ADMIN CREDENTIALS =====
-    onValue(ref(db, 'rdb_admin_settings'), (snap) => {
+    onValue(db.ref('rdb_admin_settings'), (snap) => {
         const data = snap.val() || {};
         if (data.adminUserHash) ADMIN_USER_HASH = data.adminUserHash;
         if (data.adminPassHash) ADMIN_PASS_HASH = data.adminPassHash;
@@ -3835,7 +4175,7 @@
         const targets = checked.length ? checked.map(c => c.dataset.key) : allOrders.map(o => o.key);
         if (!targets.length) { showToast('⚠ NONE SELECTED', true); return; }
         for (const key of targets) {
-            await set(ref(db, 'rdb_orders/' + key + '/status'), status);
+            await set(db.ref('rdb_orders/' + key + '/status'), status);
         }
         loadOrderHistory();
         showToast('✓ STATUS UPDATED');
@@ -4064,7 +4404,7 @@
 
     async function saveTracking(key) {
         const val = document.getElementById('track-' + key)?.value?.trim() || '';
-        await set(ref(db, 'rdb_orders/' + key + '/tracking'), val);
+        await set(db.ref('rdb_orders/' + key + '/tracking'), val);
         loadOrderHistory();
         showToast('✓ TRACKING SAVED');
     }
@@ -4073,7 +4413,7 @@
     async function deleteOrder(key) {
         if (!confirm('Delete this order?')) return;
         try {
-            await remove(ref(db, 'rdb_orders/' + key));
+            await remove(db.ref('rdb_orders/' + key));
             showToast('✓ ORDER DELETED');
             loadOrderHistory();
         } catch(e) { showToast('⚠ DELETE FAILED', true); }
@@ -4175,8 +4515,7 @@
             msgEl.textContent = '⚠ PASSWORDS DO NOT MATCH'; return;
         }
         try {
-            const { updatePassword } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
-            await updatePassword(auth.currentUser, newPwd);
+            await auth.currentUser.updatePassword(newPwd);
             msgEl.style.display='block'; msgEl.style.color='var(--green)';
             msgEl.textContent = '✓ PASSWORD UPDATED SUCCESSFULLY';
             document.getElementById('pwdCurrent').value='';
@@ -4194,7 +4533,7 @@
     // ===== ORDER STATUS UPDATE =====
     async function setOrderStatus(key, status) {
         try {
-            await set(ref(db, 'rdb_orders/' + key + '/status'), status);
+            await set(db.ref('rdb_orders/' + key + '/status'), status);
             showToast('✓ STATUS: ' + status.toUpperCase());
             loadOrderHistory();
         } catch(e) { showToast('⚠ UPDATE FAILED', true); }
@@ -4458,6 +4797,68 @@
         });
     });
 
+    // ===== BURGER MENU =====
+    function toggleBurger() {
+        const btn = document.getElementById('burgerBtn');
+        const drawer = document.getElementById('burgerDrawer');
+        const overlay = document.getElementById('burgerOverlay');
+        btn.classList.toggle('open');
+        drawer.classList.toggle('open');
+        overlay.classList.toggle('open');
+    }
+    function closeBurger() {
+        document.getElementById('burgerBtn').classList.remove('open');
+        document.getElementById('burgerDrawer').classList.remove('open');
+        document.getElementById('burgerOverlay').classList.remove('open');
+    }
+
+    // ===== THEME & PAGE NAVIGATION =====
+    function toggleTheme() {
+        const body = document.body;
+        const isDark = !body.classList.contains('light-mode');
+        if (isDark) {
+            body.classList.add('light-mode');
+            document.getElementById('themeIconDark').style.display = 'none';
+            document.getElementById('themeIconLight').style.display = 'block';
+            localStorage.setItem('rdb-theme', 'light');
+            document.getElementById('burgerThemeLabel').textContent = 'DARK MODE';
+            document.getElementById('burgerThemeIcon').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>';
+        } else {
+            body.classList.remove('light-mode');
+            document.getElementById('themeIconDark').style.display = 'block';
+            document.getElementById('themeIconLight').style.display = 'none';
+            localStorage.setItem('rdb-theme', 'dark');
+            document.getElementById('burgerThemeLabel').textContent = 'LIGHT MODE';
+            document.getElementById('burgerThemeIcon').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+        }
+    }
+
+    function showAbout() {
+        document.getElementById('mainSite').style.display = 'none';
+        document.getElementById('aboutPage').classList.add('visible');
+        window.scrollTo(0, 0);
+    }
+
+    function showMainSite() {
+        document.getElementById('aboutPage').classList.remove('visible');
+        document.getElementById('mainSite').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    // Apply saved theme on load
+    document.addEventListener('DOMContentLoaded', function() {
+        const saved = localStorage.getItem('rdb-theme');
+        if (saved === 'light') {
+            document.body.classList.add('light-mode');
+            const dark = document.getElementById('themeIconDark');
+            const light = document.getElementById('themeIconLight');
+            if (dark) dark.style.display = 'none';
+            if (light) light.style.display = 'block';
+            const lbl = document.getElementById('burgerThemeLabel');
+            if (lbl) lbl.textContent = 'DARK MODE';
+        }
+    });
+
     // ===== EXPOSE GLOBALS =====
     window.searchProducts=searchProducts; window.clearSearch=clearSearch;
     window.downloadCustomerInvoice=downloadCustomerInvoice;
@@ -4491,6 +4892,8 @@
     window.renderRevenueChart=renderRevenueChart;
     window.saveAnnouncement=saveAnnouncement; window.toggleAnnouncement=toggleAnnouncement;
     window.changePassword=changePassword;
+    window.showAbout=showAbout; window.showMainSite=showMainSite; window.toggleTheme=toggleTheme;
+    window.toggleBurger=toggleBurger; window.closeBurger=closeBurger;
 
     // ===== INIT =====
     loadCartFromStorage();

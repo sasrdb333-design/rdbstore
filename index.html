@@ -2123,6 +2123,48 @@
 
 <!-- ===================== ABOUT PAGE ===================== -->
 <div id="aboutPage">
+
+    <!-- ABOUT NAV -->
+    <nav>
+        <a href="#" class="nav-logo" onclick="showMainSite(); return false;">
+            RDB STORE
+        </a>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showMainSite(); return false;">HOME</a></li>
+            <li><a href="#" style="color:var(--white);">ABOUT</a></li>
+            <li><a href="https://www.youtube.com/@RDBMate" target="_blank">YOUTUBE</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                <svg id="themeIconDark2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:block;">
+                    <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg id="themeIconLight2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                </svg>
+            </button>
+            <button onclick="showMainSite()" class="nav-icon-btn" title="Back to Home" style="font-family:'Jersey 10',sans-serif;font-size:11px;letter-spacing:2px;color:var(--zinc);width:auto;padding:0 4px;">HOME</button>
+            <button class="nav-icon-btn" onclick="openCart()" title="Cart">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                </svg>
+                <span class="cart-badge" id="cartBadgeAbout">0</span>
+            </button>
+        </div>
+        <!-- Mobile -->
+        <div class="nav-mobile-right">
+            <button class="nav-icon-btn" onclick="openCart()" title="Cart" style="position:relative;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                </svg>
+                <span class="cart-badge" id="cartBadgeAboutMobile">0</span>
+            </button>
+            <button class="burger-btn" onclick="toggleBurger()" title="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
     <div style="max-width:780px;margin:0 auto;padding:60px 40px 100px;">
 
         <!-- Eyebrow -->
@@ -2168,15 +2210,15 @@
         <!-- Stats row -->
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:48px;" class="about-stats-grid">
             <div style="background:var(--bg2);border:1px solid var(--border);padding:24px 20px;">
-                <div style="font-family:'Jersey 10',sans-serif;font-size:36px;color:var(--accent);letter-spacing:2px;">2027</div>
+                <div style="font-family:'Jersey 10',sans-serif;font-size:36px;color:var(--white);letter-spacing:2px;">2027</div>
                 <div style="font-family:'Jersey 10',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:3px;margin-top:4px;">BRAND FOUNDED</div>
             </div>
             <div style="background:var(--bg2);border:1px solid var(--border);padding:24px 20px;">
-                <div style="font-family:'Jersey 10',sans-serif;font-size:36px;color:var(--accent);letter-spacing:2px;">LIMITED</div>
+                <div style="font-family:'Jersey 10',sans-serif;font-size:36px;color:var(--white);letter-spacing:2px;">LIMITED</div>
                 <div style="font-family:'Jersey 10',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:3px;margin-top:4px;">DROP ONLY</div>
             </div>
             <div style="background:var(--bg2);border:1px solid var(--border);padding:24px 20px;">
-                <div style="font-family:'Jersey 10',sans-serif;font-size:36px;color:var(--accent);letter-spacing:2px;">GLOBAL</div>
+                <div style="font-family:'Jersey 10',sans-serif;font-size:36px;color:var(--white);letter-spacing:2px;">GLOBAL</div>
                 <div style="font-family:'Jersey 10',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:3px;margin-top:4px;">SHIPS WORLDWIDE</div>
             </div>
         </div>
@@ -3274,6 +3316,10 @@
         badge.textContent = total;
         const mobileBadge = document.getElementById('cartBadgeMobile');
         if (mobileBadge) mobileBadge.textContent = total;
+        const aboutBadge = document.getElementById('cartBadgeAbout');
+        if (aboutBadge) aboutBadge.textContent = total;
+        const aboutMobileBadge = document.getElementById('cartBadgeAboutMobile');
+        if (aboutMobileBadge) aboutMobileBadge.textContent = total;
 
         const itemsEl = document.getElementById('cartItems');
         const emptyEl = document.getElementById('cartEmpty');
@@ -4820,6 +4866,8 @@
             body.classList.add('light-mode');
             document.getElementById('themeIconDark').style.display = 'none';
             document.getElementById('themeIconLight').style.display = 'block';
+            const d2 = document.getElementById('themeIconDark2'); if(d2) d2.style.display='none';
+            const l2 = document.getElementById('themeIconLight2'); if(l2) l2.style.display='block';
             localStorage.setItem('rdb-theme', 'light');
             document.getElementById('burgerThemeLabel').textContent = 'DARK MODE';
             document.getElementById('burgerThemeIcon').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>';
@@ -4827,6 +4875,8 @@
             body.classList.remove('light-mode');
             document.getElementById('themeIconDark').style.display = 'block';
             document.getElementById('themeIconLight').style.display = 'none';
+            const d2 = document.getElementById('themeIconDark2'); if(d2) d2.style.display='block';
+            const l2 = document.getElementById('themeIconLight2'); if(l2) l2.style.display='none';
             localStorage.setItem('rdb-theme', 'dark');
             document.getElementById('burgerThemeLabel').textContent = 'LIGHT MODE';
             document.getElementById('burgerThemeIcon').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
@@ -4854,6 +4904,10 @@
             const light = document.getElementById('themeIconLight');
             if (dark) dark.style.display = 'none';
             if (light) light.style.display = 'block';
+            const dark2 = document.getElementById('themeIconDark2');
+            const light2 = document.getElementById('themeIconLight2');
+            if (dark2) dark2.style.display = 'none';
+            if (light2) light2.style.display = 'block';
             const lbl = document.getElementById('burgerThemeLabel');
             if (lbl) lbl.textContent = 'DARK MODE';
         }

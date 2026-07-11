@@ -6,7 +6,7 @@
     <title>RDB STORE — RDBMATE OFFICIAL MERCH</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Luckiest+Guy&family=Press+Start+2P&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Font loads async, body visible immediately */
     
@@ -42,43 +42,24 @@
     </script>
     <style>
         :root {
-            --bg: #080808;
-            --bg2: #101010;
-            --bg3: #181818;
-            --border: #222222;
+            --bg: #000000;
+            --bg2: #0a0a0a;
+            --bg3: #161616;
+            --border: #262626;
             --border2: #333333;
             --white: #f5f5f5;
-            --zinc: #888888;
-            --zinc2: #555555;
-            --accent: #cb0004;
-            --accent2: #ff4747;
-            --green: #39ff7a;
-        }
-
-        /* ===== LIGHT MODE ===== */
-        body.light-mode {
-            --bg: #f0f0f0;
-            --bg2: #ffffff;
-            --bg3: #e8e8e8;
-            --border: #d0d0d0;
-            --border2: #bbbbbb;
-            --white: #111111;
-            --zinc: #555555;
-            --zinc2: #888888;
+            --zinc: #999999;
+            --zinc2: #6a6a6a;
             --accent: #cb0004;
             --accent2: #ff4747;
             --green: #00aa44;
         }
 
-        body.light-mode nav {
-            background: rgba(240,240,240,0.95);
-        }
-
-        /* Logo wrap in light mode: no forced dark box, blends with page + subtle lift */
-        body.light-mode #heroLogoWrap {
-            background: transparent;
-            border-radius: 16px;
-            padding: 12px;
+        nav {
+            background: rgba(0,0,0,0.85);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
 
         /* ===== BURGER MENU ===== */
@@ -137,7 +118,7 @@
             align-items: center;
             gap: 12px;
             padding: 14px 20px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 13px;
             letter-spacing:0.5px;
             color: var(--zinc);
@@ -183,7 +164,7 @@
             background: var(--bg3);
             border: 1px solid var(--border2);
             color: var(--white);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 12px;
             letter-spacing:0.3px;
             padding: 7px 30px 7px 32px;
@@ -224,21 +205,21 @@
             text-align: center;
         }
         .about-eyebrow {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 12px;
             letter-spacing:0.8px;
             color: var(--accent);
             margin-bottom: 24px;
         }
         .about-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: clamp(48px, 7vw, 90px);
             line-height: 0.95;
             letter-spacing:0.3px;
             margin-bottom: 32px;
         }
         .about-desc {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 20px;
             color: var(--zinc);
             line-height: 1.7;
@@ -263,7 +244,7 @@
             gap: 10px;
             border: 1px solid var(--border2);
             color: var(--white);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             letter-spacing:0.5px;
             padding: 12px 28px;
@@ -281,7 +262,7 @@
 
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--white);
             overflow-x: hidden;
@@ -318,22 +299,39 @@
         }
 
         .nav-logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 26px;
-            letter-spacing:0.6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            letter-spacing:0.2px;
             color: var(--white);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 9px;
         }
 
-        .nav-logo span {
+        .nav-logo-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .nav-logo-text { font-weight: 800; }
+        .nav-logo-text .thin { font-weight: 400; color: var(--zinc); margin-left: 2px; }
+
+        .nav-logo span.tag {
             background: var(--accent);
             color: #fff;
             padding: 2px 8px;
             font-size: 10px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             letter-spacing:0.3px;
         }
 
@@ -344,7 +342,7 @@
         }
 
         .nav-links a {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             letter-spacing:0.5px;
             text-transform: uppercase;
@@ -383,7 +381,7 @@
             right: -2px;
             background: var(--accent);
             color: #fff;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 9px;
             font-weight: 700;
             width: 16px;
@@ -406,7 +404,7 @@
         }
 
         .hero-tag {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 16px;
             letter-spacing:0.6px;
             color: var(--white);
@@ -424,7 +422,7 @@
         }
 
         h1 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: clamp(64px, 8vw, 110px);
             line-height: 0.9;
             letter-spacing:0.3px;
@@ -450,12 +448,13 @@
             gap: 12px;
             background: var(--accent);
             color: #fff;
-            font-family: 'Poppins', sans-serif;
-            font-size: 20px;
-            font-weight: 400;
-            letter-spacing:0.5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing:0.3px;
             text-decoration: none;
             padding: 14px 32px;
+            border-radius: 999px;
             transition: all 0.2s;
         }
 
@@ -489,7 +488,7 @@
             position: absolute;
             top: 16px;
             left: 16px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc2);
             letter-spacing:0.3px;
@@ -501,7 +500,7 @@
             right: 16px;
             border: 1px solid var(--green);
             color: var(--green);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 9px;
             letter-spacing:0.3px;
             padding: 4px 8px;
@@ -550,13 +549,14 @@
         }
 
         .section-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 42px;
+            font-family: 'Press Start 2P', 'Inter', sans-serif;
+            font-size: 28px;
+            line-height: 1.4;
             letter-spacing:0.5px;
         }
 
         .section-meta {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 16px;
             color: var(--zinc2);
             letter-spacing:0.3px;
@@ -568,24 +568,28 @@
             padding: 0 40px 100px;
         }
 
-        /* ===== PRODUCT GRID ===== */
+        /* ===== PRODUCT GRID (bento style) ===== */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2px;
+            gap: 24px;
         }
 
         .product-card {
-            background: var(--bg2);
+            background: var(--bg3);
             border: 1px solid var(--border);
+            border-radius: 24px;
             overflow: hidden;
-            transition: border-color 0.3s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             position: relative;
         }
 
         .product-card:hover {
             border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(203,0,4,0.18);
         }
 
         .product-card:hover .product-img-inner {
@@ -594,7 +598,10 @@
 
         .product-img {
             aspect-ratio: 1/1;
-            background: var(--bg3);
+            background: linear-gradient(160deg,#f2f2f0,#e4e4e0);
+            border-radius: 18px;
+            margin: 10px;
+            width: calc(100% - 20px);
             overflow: hidden;
             position: relative;
         }
@@ -620,30 +627,31 @@
             left: 12px;
             background: var(--accent);
             border: none;
-            font-family: 'Poppins', sans-serif;
-            font-size: 13px;
+            border-radius: 999px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
             color: #fff;
-            padding: 4px 10px;
+            padding: 5px 12px;
             letter-spacing:0.3px;
         }
 
         .product-info {
-            padding: 14px 14px 14px;
+            padding: 6px 16px 18px;
         }
 
         .product-name {
             font-size: 15px;
-            font-weight: 400;
-            margin-bottom: 3px;
+            font-weight: 500;
+            margin-bottom: 6px;
             line-height: 1.2;
             letter-spacing:0.2px;
         }
 
         .product-price {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            color: var(--white);
-            margin-bottom: 8px;
+            font-family: 'Press Start 2P', 'Inter', sans-serif;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 10px;
             letter-spacing:0.2px;
         }
 
@@ -670,8 +678,9 @@
         .btn-outline {
             background: none !important;
             border: 1px solid var(--border2) !important;
+            border-radius: 999px !important;
             color: var(--white) !important;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 13px;
             letter-spacing:0.3px;
             padding: 9px 10px;
@@ -696,8 +705,10 @@
         .btn-solid {
             background: var(--accent) !important;
             border: 1px solid var(--accent) !important;
+            border-radius: 999px !important;
             color: #fff !important;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
             font-size: 13px;
             letter-spacing:0.3px;
             padding: 9px 10px;
@@ -737,13 +748,13 @@
         }
 
         .footer-brand {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 22px;
             letter-spacing:0.6px;
         }
 
         .footer-copy {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc2);
             letter-spacing:0.3px;
@@ -755,7 +766,7 @@
         }
 
         .footer-links a {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc2);
             text-decoration: none;
@@ -804,7 +815,7 @@
         }
 
         .cart-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 22px;
             letter-spacing:0.5px;
         }
@@ -862,7 +873,7 @@
         }
 
         .cart-item-size {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc);
             letter-spacing:0.2px;
@@ -870,7 +881,7 @@
         }
 
         .cart-item-price {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             font-weight: 700;
         }
@@ -900,14 +911,14 @@
         }
 
         .cart-subtotal-label {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             color: var(--zinc);
             letter-spacing:0.3px;
         }
 
         .cart-subtotal-value {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 20px;
             font-weight: 700;
         }
@@ -916,7 +927,7 @@
             text-align: center;
             padding: 60px 20px;
             color: var(--zinc2);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 12px;
             letter-spacing:0.3px;
         }
@@ -962,7 +973,7 @@
         }
 
         .modal-tag {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc2);
             letter-spacing:0.5px;
@@ -970,7 +981,7 @@
         }
 
         .modal-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 32px;
             letter-spacing:0.3px;
             margin-bottom: 20px;
@@ -1004,7 +1015,7 @@
         .modal-body { padding: 24px 28px 28px; }
 
         .form-label {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc);
             letter-spacing:0.5px;
@@ -1023,7 +1034,7 @@
             background: none;
             border: 1px solid var(--border2);
             color: var(--zinc);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             padding: 8px 16px;
             cursor: pointer;
@@ -1072,7 +1083,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 16px;
             border-left: 1px solid var(--border2);
             border-right: 1px solid var(--border2);
@@ -1099,13 +1110,13 @@
         }
 
         .total-price {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 28px;
             font-weight: 700;
         }
 
         .total-label {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc2);
             letter-spacing:0.3px;
@@ -1118,7 +1129,7 @@
             background: var(--bg3);
             border: 1px solid var(--border);
             color: var(--white);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             padding: 12px 14px;
             margin-bottom: 14px;
@@ -1134,7 +1145,7 @@
             background: var(--bg3);
             border: 1px solid var(--border);
             color: var(--white);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             padding: 12px 14px;
             margin-bottom: 14px;
@@ -1152,7 +1163,7 @@
             background: none;
             border: none;
             color: var(--zinc);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             letter-spacing:0.3px;
             cursor: pointer;
@@ -1209,7 +1220,7 @@
         /* ===== ORDER STATUS BADGE ===== */
         .status-badge {
             display: inline-block;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             letter-spacing:0.3px;
             padding: 3px 10px;
@@ -1233,20 +1244,20 @@
             padding: 18px 20px;
         }
         .revenue-label {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             letter-spacing:0.5px;
             color: var(--zinc2);
             margin-bottom: 8px;
         }
         .revenue-value {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 26px;
             color: var(--accent);
             letter-spacing:0.2px;
         }
         .revenue-sub {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             color: var(--zinc2);
             margin-top: 4px;
@@ -1273,13 +1284,13 @@
             padding: 28px;
         }
         .crop-modal-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 20px;
             letter-spacing:0.5px;
             margin-bottom: 6px;
         }
         .crop-modal-sub {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             color: var(--zinc2);
             letter-spacing:0.3px;
@@ -1328,7 +1339,7 @@
             flex-wrap: wrap;
         }
         .crop-preview-label {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             letter-spacing:0.3px;
             color: var(--zinc2);
@@ -1382,7 +1393,7 @@
         .admin-topbar::-webkit-scrollbar { display: none; }
 
         .admin-topbar-brand {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 17px;
             letter-spacing:0.5px;
             color: var(--white);
@@ -1413,7 +1424,7 @@
             align-items: center;
             gap: 6px;
             padding: 0 13px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             letter-spacing:0.3px;
             color: var(--zinc);
@@ -1440,7 +1451,7 @@
             background: none;
             border: 1px solid var(--border2);
             color: var(--zinc);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             letter-spacing:0.3px;
             padding: 7px 13px;
@@ -1463,14 +1474,14 @@
         .admin-page.active { display: block; }
 
         .admin-page-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 36px;
             letter-spacing:0.5px;
             margin-bottom: 8px;
         }
 
         .admin-page-sub {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             color: var(--zinc2);
             letter-spacing:0.3px;
@@ -1492,7 +1503,7 @@
         }
 
         .stat-label {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc2);
             letter-spacing:0.3px;
@@ -1500,7 +1511,7 @@
         }
 
         .stat-value {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 36px;
             letter-spacing:0.3px;
         }
@@ -1516,7 +1527,7 @@
         }
 
         .admin-section-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 22px;
             letter-spacing:0.3px;
         }
@@ -1531,7 +1542,7 @@
             background: var(--bg3);
             border: 1px solid var(--border);
             padding: 12px 16px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             letter-spacing:0.3px;
             color: var(--zinc);
@@ -1562,8 +1573,8 @@
         .table-img img { width: 100%; height: 100%; object-fit: cover; }
 
         .table-name { font-weight: 600; margin-bottom: 2px; }
-        .table-id { font-family: 'Poppins', sans-serif; font-size: 10px; color: var(--zinc2); }
-        .table-price { font-family: 'Poppins', sans-serif; font-weight: 700; }
+        .table-id { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--zinc2); }
+        .table-price { font-family: 'Inter', sans-serif; font-weight: 700; }
 
         .table-actions { display: flex; gap: 8px; }
 
@@ -1571,7 +1582,7 @@
             background: none;
             border: 1px solid var(--border2);
             color: var(--zinc);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             letter-spacing:0.2px;
             padding: 6px 12px;
@@ -1591,7 +1602,7 @@
         }
 
         .admin-form-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 22px;
             letter-spacing:0.3px;
             margin-bottom: 24px;
@@ -1600,7 +1611,7 @@
         }
 
         .admin-label {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc);
             letter-spacing:0.3px;
@@ -1613,7 +1624,7 @@
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--white);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             padding: 11px 14px;
             margin-bottom: 16px;
@@ -1629,7 +1640,7 @@
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--white);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             padding: 11px 14px;
             margin-bottom: 16px;
@@ -1663,7 +1674,7 @@
         }
 
         .upload-icon { margin-bottom: 8px; color: var(--zinc2); }
-        .upload-text { font-family: 'Poppins', sans-serif; font-size: 11px; color: var(--zinc2); letter-spacing:0.3px; }
+        .upload-text { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--zinc2); letter-spacing:0.3px; }
         .upload-hint { font-size: 11px; color: var(--zinc2); margin-top: 4px; }
 
         .image-preview {
@@ -1689,7 +1700,7 @@
             background: var(--bg3);
             border: 1px solid var(--border2);
             padding: 6px 12px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
         }
 
@@ -1709,7 +1720,7 @@
             background: var(--accent);
             border: none;
             color: #fff;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             font-weight: 700;
             letter-spacing:0.5px;
@@ -1724,7 +1735,7 @@
             background: none;
             border: 1px solid var(--border2);
             color: var(--zinc);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             letter-spacing:0.5px;
             padding: 12px 24px;
@@ -1742,7 +1753,7 @@
             right: 32px;
             background: var(--accent);
             color: #000;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             letter-spacing:0.3px;
             padding: 14px 20px;
@@ -1782,14 +1793,14 @@
         }
 
         .login-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 28px;
             letter-spacing:0.6px;
             margin-bottom: 6px;
         }
 
         .login-sub {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--zinc2);
             letter-spacing:0.3px;
@@ -1797,7 +1808,7 @@
         }
 
         .login-error {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             color: var(--accent2);
             letter-spacing:0.3px;
@@ -1953,7 +1964,7 @@
         .announcement-bar {
             background: var(--accent);
             color: #fff;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 13px;
             letter-spacing:0.5px;
             text-align: center;
@@ -1975,20 +1986,20 @@
             gap: 18px;
         }
         .order-id {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 11px;
             color: var(--zinc2);
             letter-spacing:0.3px;
             margin-bottom: 4px;
         }
         .order-meta {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             color: var(--zinc);
             margin-bottom: 4px;
         }
         .order-total {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 20px;
             color: var(--accent);
         }
@@ -1997,7 +2008,7 @@
         .out-of-stock-tag {
             background: var(--accent);
             color: #fff;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 13px;
             letter-spacing:0.3px;
             padding: 4px 10px;
@@ -2021,7 +2032,8 @@
     <!-- NAV -->
     <nav>
         <a href="#" class="nav-logo" onclick="showMainSite(); return false;">
-            RDB STORE
+            <span class="nav-logo-icon">R</span>
+            <span class="nav-logo-text">RDB<span class="thin">Store</span></span>
         </a>
         <div class="nav-search-wrap">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--zinc2)" stroke-width="2">
@@ -2038,15 +2050,9 @@
             <button onclick="clearSearch()" id="searchClearBtn" class="nav-search-clear">✕</button>
         </div>
         <div class="nav-right" id="navRight">
-            <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle theme">
-                <svg id="themeIconDark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:block;">
-                    <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                </svg>
-                <svg id="themeIconLight" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-                </svg>
+            <button class="theme-toggle" id="langToggleBtn" onclick="toggleLanguage()" title="বাংলা">
+                <span id="langToggleLabel" style="font-family:'Press Start 2P',sans-serif;font-size:9px;">বাং</span>
             </button>
-            <button onclick="showAbout()" class="nav-icon-btn" title="About" style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.3px;color:var(--zinc);width:auto;padding:0 4px;">ABOUT</button>
             <a href="https://www.youtube.com/@RDBMate" target="_blank" class="nav-icon-btn" title="YouTube">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M22.54 6.42a2.78 2.78 0 00-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 2A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-2A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
@@ -2078,15 +2084,9 @@
     <div class="burger-overlay" id="burgerOverlay" onclick="closeBurger()"></div>
     <div class="burger-drawer" id="burgerDrawer">
         <div class="burger-drawer-inner">
-            <button onclick="toggleTheme(); closeBurger();" class="burger-item">
-                <span id="burgerThemeIcon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                </span>
-                <span id="burgerThemeLabel">LIGHT MODE</span>
-            </button>
-            <button onclick="showAbout(); closeBurger();" class="burger-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                ABOUT
+            <button onclick="toggleLanguage(); closeBurger();" class="burger-item">
+                <span id="burgerLangIcon" style="font-family:'Press Start 2P',sans-serif;font-size:9px;">বাং</span>
+                <span id="burgerLangLabel">বাংলা</span>
             </button>
             <a href="https://www.youtube.com/@RDBMate" target="_blank" class="burger-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2118,7 +2118,7 @@
             <span class="section-meta">SHIPS GLOBAL FROM THE NODE</span>
         </div>
 
-        <div id="searchResultInfo" style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:16px;display:none;"></div>
+        <div id="searchResultInfo" style="font-family:'Inter',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:16px;display:none;"></div>
         <div class="products-grid" id="productsGrid">
             <!-- Products rendered by JS -->
         </div>
@@ -2141,139 +2141,6 @@
 
 </div>
 
-<!-- ===================== ABOUT PAGE ===================== -->
-<div id="aboutPage">
-
-    <!-- ABOUT NAV -->
-    <nav>
-        <a href="#" class="nav-logo" onclick="showMainSite(); return false;">
-            RDB STORE
-        </a>
-        <ul class="nav-links">
-            <li><a href="#" onclick="showMainSite(); return false;">HOME</a></li>
-            <li><a href="#" style="color:var(--white);">ABOUT</a></li>
-            <li><a href="https://www.youtube.com/@RDBMate" target="_blank">YOUTUBE</a></li>
-        </ul>
-        <div class="nav-right">
-            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
-                <svg id="themeIconDark2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:block;">
-                    <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                </svg>
-                <svg id="themeIconLight2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-                </svg>
-            </button>
-            <button onclick="showMainSite()" class="nav-icon-btn" title="Back to Home" style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.3px;color:var(--zinc);width:auto;padding:0 4px;">HOME</button>
-            <button class="nav-icon-btn" onclick="openCart()" title="Cart">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                </svg>
-                <span class="cart-badge" id="cartBadgeAbout">0</span>
-            </button>
-        </div>
-        <!-- Mobile -->
-        <div class="nav-mobile-right">
-            <button class="nav-icon-btn" onclick="openCart()" title="Cart" style="position:relative;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                </svg>
-                <span class="cart-badge" id="cartBadgeAboutMobile">0</span>
-            </button>
-            <button class="burger-btn" onclick="toggleBurger()" title="Menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
-    <div style="max-width:780px;margin:0 auto;padding:60px 40px 100px;">
-
-        <!-- Eyebrow -->
-        <div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.8px;color:var(--accent);margin-bottom:20px;">RDBMATE // OFFICIAL COLLECTIBLES</div>
-
-        <!-- Title -->
-        <h1 style="font-family:'Poppins',sans-serif;font-size:clamp(42px,6vw,80px);line-height:0.95;letter-spacing:0.3px;margin-bottom:20px;">
-            UPGRADE YOUR<br><span style="color:var(--accent);">COLLECTION</span>
-        </h1>
-        <p style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--zinc);line-height:1.7;margin-bottom:48px;">
-            Official RDBMate merch — limited drop collectibles, gear, and accessories for the community.
-        </p>
-
-        <!-- Divider -->
-        <div style="width:100%;height:1px;background:var(--border);margin-bottom:48px;"></div>
-
-        <!-- Article header -->
-        <div style="font-family:'Poppins',sans-serif;font-size:10px;letter-spacing:0.6px;color:var(--zinc2);margin-bottom:12px;">// THE STORY BEHIND THE BRAND</div>
-        <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(28px,4vw,48px);letter-spacing:0.3px;margin-bottom:32px;line-height:1.1;">
-            AHMAD SHOAIB<br><span style="color:var(--zinc);font-size:0.55em;letter-spacing:0.6px;">CEO &amp; FOUNDER — RDBMATE</span>
-        </h2>
-
-        <!-- Article body -->
-        <div style="font-family:'Poppins',sans-serif;font-size:17px;color:var(--zinc);line-height:1.9;display:flex;flex-direction:column;gap:24px;">
-
-            <p>Ahmad Shoaib is the founder and chief executive of RDBMate — a digital-first content platform and collectibles brand built from the ground up with nothing but a camera, a vision, and an obsessive attention to community. What started as a small YouTube channel quickly became a movement, drawing in thousands of viewers who shared the same love for rare gear, limited collectibles, and authentic creative culture.</p>
-
-            <p>Born with a builder's mindset, Shoaib launched RDBMate not just as a channel, but as a universe — one where content, merchandise, and community exist on the same plane. He believed early on that the people who showed up every day to watch, comment, and engage deserved more than just videos. They deserved something they could hold. Something real. That belief became RDB Store.</p>
-
-            <p>Under Shoaib's leadership, RDB Store has grown into an official merch operation with limited-drop collectibles, branded gear, and exclusive accessories — each item designed to reflect the aesthetic and energy of the RDBMate identity. No mass production. No generic templates. Every drop is intentional, every piece is crafted for the community that made the brand possible.</p>
-
-            <p style="color:var(--white);">"I don't make merch to sell product. I make it to give the community something they actually want to own." — Ahmad Shoaib</p>
-
-            <p>Outside of building the brand, Shoaib is known for being deeply involved in every layer of the operation — from product design and shoot direction to community feedback loops. He treats every subscriber and customer as a co-creator of the RDBMate story, not just an audience member.</p>
-
-            <p>RDB Store is the physical extension of that philosophy — a limited-run, high-intent merchandise platform where every drop matters and nothing sits on a shelf forever.</p>
-
-        </div>
-
-        <!-- Divider -->
-        <div style="width:100%;height:1px;background:var(--border);margin:48px 0;"></div>
-
-        <!-- Stats row -->
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:48px;" class="about-stats-grid">
-            <div style="background:var(--bg2);border:1px solid var(--border);padding:24px 20px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--white);letter-spacing:0.3px;">2027</div>
-                <div style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.5px;margin-top:4px;">BRAND FOUNDED</div>
-            </div>
-            <div style="background:var(--bg2);border:1px solid var(--border);padding:24px 20px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--white);letter-spacing:0.3px;">LIMITED</div>
-                <div style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.5px;margin-top:4px;">DROP ONLY</div>
-            </div>
-            <div style="background:var(--bg2);border:1px solid var(--border);padding:24px 20px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--white);letter-spacing:0.3px;">GLOBAL</div>
-                <div style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.5px;margin-top:4px;">SHIPS WORLDWIDE</div>
-            </div>
-        </div>
-
-        <!-- CTA buttons -->
-        <div style="display:flex;gap:16px;flex-wrap:wrap;">
-            <a href="https://www.youtube.com/@RDBMate" target="_blank" class="about-link-btn primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22.54 6.42a2.78 2.78 0 00-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 2A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-2A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
-                    <path d="M10 15l5-3-5-3v6z" fill="currentColor" stroke="none"/>
-                </svg>
-                YOUTUBE
-            </a>
-            <button class="about-link-btn" onclick="showMainSite()">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                BROWSE MERCH
-            </button>
-        </div>
-
-    </div>
-
-    <!-- Footer -->
-    <footer style="background:var(--bg2);border-top:1px solid var(--border);padding:32px 40px;">
-        <div class="footer-inner">
-            <div>
-                <div class="footer-brand">RDB STORE</div>
-                <div class="footer-copy" style="margin-top:6px;">OFFICIAL MERCHANDISE // RDBMATE PLATFORM</div>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.youtube.com/@RDBMate" target="_blank">YOUTUBE</a>
-                <a href="#" onclick="showMainSite(); return false;">MERCH</a>
-            </div>
-        </div>
-    </footer>
-</div>
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-sidebar" id="cartSidebar">
     <div class="cart-head">
@@ -2295,29 +2162,29 @@
         <div style="margin-bottom:14px;">
             <div style="display:flex;gap:8px;">
                 <input type="text" id="promoInput" placeholder="PROMO CODE"
-                    style="flex:1;background:var(--bg3);border:1px solid var(--border2);color:var(--white);font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:0.3px;padding:10px 12px;outline:none;text-transform:uppercase;"
+                    style="flex:1;background:var(--bg3);border:1px solid var(--border2);color:var(--white);font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.3px;padding:10px 12px;outline:none;text-transform:uppercase;"
                     onkeydown="if(event.key==='Enter')applyPromo()">
                 <button onclick="applyPromo()"
-                    style="background:var(--accent);border:none;color:#fff;font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:0.3px;padding:10px 14px;cursor:pointer;white-space:nowrap;">
+                    style="background:var(--accent);border:none;color:#fff;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:0.3px;padding:10px 14px;cursor:pointer;white-space:nowrap;">
                     APPLY
                 </button>
             </div>
-            <div id="promoMsg" style="display:none;font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.3px;margin-top:6px;"></div>
+            <div id="promoMsg" style="display:none;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.3px;margin-top:6px;"></div>
         </div>
         <div class="cart-subtotal">
             <span class="cart-subtotal-label">SUBTOTAL</span>
             <span class="cart-subtotal-value" id="cartTotal">$0.00</span>
         </div>
         <div id="cartDiscountRow" style="display:none;justify-content:space-between;align-items:center;margin-bottom:8px;">
-            <span style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--green);letter-spacing:0.2px;">PROMO DISCOUNT</span>
-            <span id="cartDiscountAmt" style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--green);">-$0.00</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:var(--green);letter-spacing:0.2px;">PROMO DISCOUNT</span>
+            <span id="cartDiscountAmt" style="font-family:'Inter',sans-serif;font-size:16px;color:var(--green);">-$0.00</span>
         </div>
         <div id="cartFinalRow" style="display:none;justify-content:space-between;align-items:center;margin-bottom:14px;">
-            <span style="font-family:'Poppins',sans-serif;font-size:14px;letter-spacing:0.3px;color:var(--white);">TOTAL</span>
-            <span id="cartFinalTotal" style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;">$0.00</span>
+            <span style="font-family:'Inter',sans-serif;font-size:14px;letter-spacing:0.3px;color:var(--white);">TOTAL</span>
+            <span id="cartFinalTotal" style="font-family:'Inter',sans-serif;font-size:22px;font-weight:700;">$0.00</span>
         </div>
         <!-- Currency display toggle -->
-        <div id="cartCurrencyDisplay" style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--zinc2);margin-bottom:12px;display:none;"></div>
+        <div id="cartCurrencyDisplay" style="font-family:'Inter',sans-serif;font-size:13px;color:var(--zinc2);margin-bottom:12px;display:none;"></div>
         <button class="btn-solid" style="width:100%;padding:14px;font-size:15px;letter-spacing:0.3px;" onclick="checkoutCart()">
             CHECKOUT VIA WHATSAPP →
         </button>
@@ -2371,13 +2238,13 @@
                     <!-- item row injected by JS -->
                     <div id="checkoutItemRow" style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">
                         <div id="checkoutItemImg" style="width:56px;height:56px;background:var(--bg2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;position:relative;">
-                            <span id="checkoutQtyBadge" style="position:absolute;top:-6px;right:-6px;background:var(--accent);color:#fff;font-size:12px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;">1</span>
+                            <span id="checkoutQtyBadge" style="position:absolute;top:-6px;right:-6px;background:var(--accent);color:#fff;font-size:12px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;">1</span>
                         </div>
                         <div style="flex:1;">
                             <div id="checkoutItemName" style="font-size:15px;margin-bottom:3px;"></div>
                             <div id="checkoutItemSize" style="font-size:13px;color:var(--zinc2);"></div>
                         </div>
-                        <div id="checkoutItemPrice" style="font-size:16px;font-family:'Poppins',sans-serif;"></div>
+                        <div id="checkoutItemPrice" style="font-size:16px;font-family:'Inter',sans-serif;"></div>
                     </div>
 
                     <!-- Subtotal / discount / total -->
@@ -2397,7 +2264,7 @@
                         <div style="display:flex;justify-content:space-between;margin-bottom:4px;padding-top:10px;border-top:1px solid var(--border);">
                             <span style="font-size:18px;font-weight:600;">TOTAL</span>
                             <div style="text-align:right;">
-                                <span id="chkTotal" style="font-size:22px;font-family:'Poppins',sans-serif;"></span>
+                                <span id="chkTotal" style="font-size:22px;font-family:'Inter',sans-serif;"></span>
                                 <div id="chkBdtNote" style="font-size:12px;color:var(--zinc2);"></div>
                             </div>
                         </div>
@@ -2454,7 +2321,7 @@
         </div>
 
         <!-- STEP 3: Confirm screen (shown after submit) -->
-        <div id="modalStep3" style="display:none;padding:40px;text-align:center;font-family:'Poppins',sans-serif;">
+        <div id="modalStep3" style="display:none;padding:40px;text-align:center;font-family:'Inter',sans-serif;">
             <div style="font-size:52px;margin-bottom:16px;color:var(--green);">✓</div>
             <div style="font-size:30px;letter-spacing:0.6px;margin-bottom:10px;color:var(--green);">ORDER SENT!</div>
             <div style="font-size:16px;color:var(--zinc);margin-bottom:28px;line-height:1.7;letter-spacing:0.2px;" id="confirmSummaryText"></div>
@@ -2465,7 +2332,7 @@
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     DOWNLOAD INVOICE
                 </button>
-                <button style="padding:12px 28px;font-size:16px;letter-spacing:0.5px;background:none;border:1px solid var(--border2);color:var(--white);font-family:'Poppins',sans-serif;cursor:pointer;" onclick="closeModal()">CLOSE</button>
+                <button style="padding:12px 28px;font-size:16px;letter-spacing:0.5px;background:none;border:1px solid var(--border2);color:var(--white);font-family:'Inter',sans-serif;cursor:pointer;" onclick="closeModal()">CLOSE</button>
             </div>
         </div>
     </div>
@@ -2569,7 +2436,7 @@
             </div>
 
             <!-- REVENUE SUMMARY -->
-            <div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.5px;color:var(--zinc2);margin:24px 0 12px;">REVENUE SUMMARY</div>
+            <div style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.5px;color:var(--zinc2);margin:24px 0 12px;">REVENUE SUMMARY</div>
             <div class="revenue-grid">
                 <div class="revenue-card">
                     <div class="revenue-label">TOTAL REVENUE (USD)</div>
@@ -2599,7 +2466,7 @@
             </div>
 
             <!-- STORAGE OVERVIEW -->
-            <div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.5px;color:var(--zinc2);margin:24px 0 12px;">STORAGE OVERVIEW</div>
+            <div style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.5px;color:var(--zinc2);margin:24px 0 12px;">STORAGE OVERVIEW</div>
             <div class="stats-row" id="storageStatsRow">
                 <div class="stat-card">
                     <div class="stat-label" style="display:flex;align-items:center;gap:8px;">
@@ -2607,7 +2474,7 @@
                         FIREBASE USAGE
                     </div>
                     <div class="stat-value" id="statFirebaseKB" style="font-size:28px;">—</div>
-                    <div style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.2px;margin-top:4px;">/ 1,048,576 KB FREE</div>
+                    <div style="font-family:'Inter',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.2px;margin-top:4px;">/ 1,048,576 KB FREE</div>
                     <div style="margin-top:10px;height:4px;background:var(--border);width:100%;">
                         <div id="statFirebaseBar" style="height:4px;background:var(--accent);width:0%;transition:width 0.6s;"></div>
                     </div>
@@ -2618,7 +2485,7 @@
                         IMAGES ON IMGBB
                     </div>
                     <div class="stat-value stat-accent" id="statImgBBCount">—</div>
-                    <div style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.2px;margin-top:4px;">UNLIMITED STORAGE</div>
+                    <div style="font-family:'Inter',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.2px;margin-top:4px;">UNLIMITED STORAGE</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label" style="display:flex;align-items:center;gap:8px;">
@@ -2626,12 +2493,12 @@
                         FIREBASE RECORDS
                     </div>
                     <div class="stat-value" id="statFirebaseRecords">—</div>
-                    <div style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.2px;margin-top:4px;">PRODUCTS + ORDERS + SETTINGS</div>
+                    <div style="font-family:'Inter',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.2px;margin-top:4px;">PRODUCTS + ORDERS + SETTINGS</div>
                 </div>
             </div>
 
             <!-- REVENUE CHART -->
-            <div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.5px;color:var(--zinc2);margin:24px 0 12px;">REVENUE OVERVIEW</div>
+            <div style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.5px;color:var(--zinc2);margin:24px 0 12px;">REVENUE OVERVIEW</div>
             <div style="background:var(--bg3);border:1px solid var(--border);padding:20px;margin-bottom:24px;">
                 <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
                     <button class="admin-btn" id="chartBtn7" style="font-size:10px;padding:5px 12px;" onclick="renderRevenueChart(7)">7 DAYS</button>
@@ -2642,7 +2509,7 @@
             </div>
 
             <!-- BEST SELLERS -->
-            <div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.5px;color:var(--zinc2);margin-bottom:12px;">BEST SELLERS</div>
+            <div style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.5px;color:var(--zinc2);margin-bottom:12px;">BEST SELLERS</div>
             <div id="bestSellersList" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;"></div>
 
             <div class="admin-section-title" style="margin-bottom:16px;">RECENT PRODUCTS</div>
@@ -2751,9 +2618,9 @@
             <!-- Currency toggle -->
             <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;padding:16px 20px;background:var(--bg3);border:1px solid var(--border);flex-wrap:wrap;">
                 <span style="font-size:15px;letter-spacing:0.3px;color:var(--zinc);">CURRENCY:</span>
-                <button id="currencyToggleBtn" onclick="toggleCurrency()" style="background:var(--accent);border:none;color:#fff;font-family:'Poppins',sans-serif;font-size:15px;letter-spacing:0.3px;padding:8px 20px;cursor:pointer;">USD $</button>
+                <button id="currencyToggleBtn" onclick="toggleCurrency()" style="background:var(--accent);border:none;color:#fff;font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.3px;padding:8px 20px;cursor:pointer;">USD $</button>
                 <span style="font-size:13px;color:var(--zinc2);">1 USD =</span>
-                <input id="bdtRateInput" type="number" value="110" min="1" style="width:70px;background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:'Poppins',sans-serif;font-size:14px;padding:4px 8px;outline:none;" onchange="updateBDTRate()">
+                <input id="bdtRateInput" type="number" value="110" min="1" style="width:70px;background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;padding:4px 8px;outline:none;" onchange="updateBDTRate()">
                 <span style="font-size:13px;color:var(--zinc2);">BDT</span>
             </div>
 
@@ -2773,7 +2640,7 @@
                 <div class="admin-section-title">PROMO CODES</div>
             </div>
             <div style="background:var(--bg3);border:1px solid var(--border);padding:22px;max-width:520px;margin-bottom:28px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:18px;letter-spacing:0.3px;margin-bottom:18px;border-bottom:1px solid var(--border);padding-bottom:12px;">ADD NEW PROMO CODE</div>
+                <div style="font-family:'Inter',sans-serif;font-size:18px;letter-spacing:0.3px;margin-bottom:18px;border-bottom:1px solid var(--border);padding-bottom:12px;">ADD NEW PROMO CODE</div>
                 <label class="admin-label">CODE</label>
                 <input type="text" id="newPromoCode" class="admin-input" placeholder="e.g. RDBMATE20" style="text-transform:uppercase;">
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
@@ -2813,8 +2680,8 @@
 
             <!-- Logo Upload -->
             <div style="background:var(--bg3);border:1px solid var(--border);padding:28px;max-width:520px;margin-bottom:32px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:20px;letter-spacing:0.3px;margin-bottom:6px;">STORE LOGO</div>
-                <div style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">SHOWN IN HERO SECTION AS "RDBMATE CORE LOGO VERIFIED ORIGINAL"</div>
+                <div style="font-family:'Inter',sans-serif;font-size:20px;letter-spacing:0.3px;margin-bottom:6px;">STORE LOGO</div>
+                <div style="font-family:'Inter',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">SHOWN IN HERO SECTION AS "RDBMATE CORE LOGO VERIFIED ORIGINAL"</div>
 
                 <!-- Current logo preview -->
                 <div style="margin-bottom:20px;">
@@ -2850,8 +2717,8 @@
 
             <!-- Store Name / Hero Text -->
             <div style="background:var(--bg3);border:1px solid var(--border);padding:28px;max-width:520px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:20px;letter-spacing:0.3px;margin-bottom:6px;">HERO TEXT</div>
-                <div style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">CUSTOMIZE HOMEPAGE HEADING &amp; DESCRIPTION</div>
+                <div style="font-family:'Inter',sans-serif;font-size:20px;letter-spacing:0.3px;margin-bottom:6px;">HERO TEXT</div>
+                <div style="font-family:'Inter',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">CUSTOMIZE HOMEPAGE HEADING &amp; DESCRIPTION</div>
 
                 <label class="admin-label">HERO HEADING LINE 1</label>
                 <input type="text" id="settingsHeroLine1" class="admin-input" placeholder="e.g. UPGRADE YOUR">
@@ -2892,16 +2759,16 @@
 
             <!-- BULK STATUS -->
             <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;align-items:center;">
-                <span style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;">BULK:</span>
+                <span style="font-family:'Inter',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;">BULK:</span>
                 <button class="admin-btn" style="font-size:10px;padding:5px 10px;color:#f59e0b;border-color:#f59e0b;" onclick="bulkStatus('pending')">PENDING</button>
                 <button class="admin-btn" style="font-size:10px;padding:5px 10px;color:#3b82f6;border-color:#3b82f6;" onclick="bulkStatus('confirmed')">CONFIRMED</button>
                 <button class="admin-btn" style="font-size:10px;padding:5px 10px;color:#8b5cf6;border-color:#8b5cf6;" onclick="bulkStatus('shipped')">SHIPPED</button>
                 <button class="admin-btn" style="font-size:10px;padding:5px 10px;color:#22c55e;border-color:#22c55e;" onclick="bulkStatus('delivered')">DELIVERED</button>
-                <div id="orderCountLabel" style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.3px;margin-left:auto;"></div>
+                <div id="orderCountLabel" style="font-family:'Inter',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.3px;margin-left:auto;"></div>
             </div>
 
             <div id="orderList">
-                <div style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.3px;padding:40px;text-align:center;">LOADING ORDERS...</div>
+                <div style="font-family:'Inter',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.3px;padding:40px;text-align:center;">LOADING ORDERS...</div>
             </div>
         </div>
 
@@ -2911,17 +2778,17 @@
             <div class="admin-page-sub">// TOP BANNER — VISIBLE ON STOREFRONT</div>
 
             <div style="background:var(--bg3);border:1px solid var(--border);padding:28px;max-width:520px;margin-bottom:32px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:20px;letter-spacing:0.3px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">BAR SETTINGS</div>
+                <div style="font-family:'Inter',sans-serif;font-size:20px;letter-spacing:0.3px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">BAR SETTINGS</div>
 
                 <label class="admin-label">ANNOUNCEMENT TEXT</label>
                 <textarea id="announcementText" class="admin-textarea" placeholder="e.g. 🔥 FREE SHIPPING ON ORDERS OVER $50 — LIMITED TIME" style="min-height:70px;"></textarea>
 
                 <label class="admin-label">STATUS</label>
                 <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
-                    <button id="announcementToggleBtn" onclick="toggleAnnouncement()" style="background:var(--bg);border:1px solid var(--border2);color:var(--zinc);font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:0.3px;padding:9px 20px;cursor:pointer;transition:all 0.2s;">
+                    <button id="announcementToggleBtn" onclick="toggleAnnouncement()" style="background:var(--bg);border:1px solid var(--border2);color:var(--zinc);font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.3px;padding:9px 20px;cursor:pointer;transition:all 0.2s;">
                         OFF
                     </button>
-                    <span id="announcementStatusLabel" style="font-family:'Poppins',sans-serif;font-size:12px;color:var(--zinc2);letter-spacing:0.3px;">BAR IS HIDDEN</span>
+                    <span id="announcementStatusLabel" style="font-family:'Inter',sans-serif;font-size:12px;color:var(--zinc2);letter-spacing:0.3px;">BAR IS HIDDEN</span>
                 </div>
 
                 <button class="admin-btn" onclick="saveAnnouncement()">SAVE ANNOUNCEMENT →</button>
@@ -2929,8 +2796,8 @@
 
             <!-- Live preview -->
             <div style="background:var(--bg3);border:1px solid var(--border);padding:20px;max-width:520px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:12px;">LIVE PREVIEW</div>
-                <div id="announcementPreview" style="background:var(--accent);color:#fff;font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:0.5px;text-align:center;padding:8px 16px;">
+                <div style="font-family:'Inter',sans-serif;font-size:11px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:12px;">LIVE PREVIEW</div>
+                <div id="announcementPreview" style="background:var(--accent);color:#fff;font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.5px;text-align:center;padding:8px 16px;">
                     🔥 FREE SHIPPING ON ORDERS OVER $50 — LIMITED TIME
                 </div>
             </div>
@@ -2942,7 +2809,7 @@
             <div class="admin-page-sub">// UPDATE ADMIN CREDENTIALS</div>
 
             <div style="background:var(--bg3);border:1px solid var(--border);padding:28px;max-width:420px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:20px;letter-spacing:0.3px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">NEW CREDENTIALS</div>
+                <div style="font-family:'Inter',sans-serif;font-size:20px;letter-spacing:0.3px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">NEW CREDENTIALS</div>
 
                 <label class="admin-label">CURRENT PASSWORD</label>
                 <input type="password" id="pwdCurrent" class="admin-input" placeholder="Enter current password">
@@ -2956,7 +2823,7 @@
                 <label class="admin-label">CONFIRM NEW PASSWORD</label>
                 <input type="password" id="pwdConfirm" class="admin-input" placeholder="Repeat new password">
 
-                <div id="pwdMsg" style="display:none;font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.3px;margin-bottom:12px;"></div>
+                <div id="pwdMsg" style="display:none;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.3px;margin-bottom:12px;"></div>
 
                 <button class="admin-btn" onclick="changePassword()">UPDATE CREDENTIALS →</button>
             </div>
@@ -2968,8 +2835,8 @@
 <!-- EDIT MODAL -->
 <div class="edit-overlay" id="editOverlay">
     <div class="edit-box">
-        <div style="font-family:'Poppins',sans-serif;font-size:24px;letter-spacing:0.5px;margin-bottom:4px;">EDIT PRODUCT</div>
-        <div style="font-family:'Poppins',sans-serif;font-size:10px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);">// MODIFY PRODUCT DATA</div>
+        <div style="font-family:'Inter',sans-serif;font-size:24px;letter-spacing:0.5px;margin-bottom:4px;">EDIT PRODUCT</div>
+        <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);">// MODIFY PRODUCT DATA</div>
 
         <input type="hidden" id="editProductId">
 
@@ -3192,7 +3059,7 @@
             : products;
 
         if (!filtered.length) {
-            grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:80px 20px;font-family:'Poppins',sans-serif;font-size:16px;color:var(--zinc2);letter-spacing:0.5px;">${searchQuery ? 'NO PRODUCTS FOUND FOR "' + searchQuery.toUpperCase() + '"' : 'NO PRODUCTS AVAILABLE'}</div>`;
+            grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:80px 20px;font-family:'Inter',sans-serif;font-size:16px;color:var(--zinc2);letter-spacing:0.5px;">${searchQuery ? 'NO PRODUCTS FOUND FOR "' + searchQuery.toUpperCase() + '"' : 'NO PRODUCTS AVAILABLE'}</div>`;
             if (searchQuery) {
                 const infoEl = document.getElementById('searchResultInfo');
                 if (infoEl) { infoEl.style.display='block'; infoEl.textContent = '0 RESULTS FOR "' + searchQuery.toUpperCase() + '"'; }
@@ -3209,7 +3076,7 @@
                         ${p.image ? `<img src="${p.image}" alt="${p.name}">` : `<svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--zinc2)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9l4-4 4 4 4-4 4 4M3 15l4 4 4-4 4 4"/></svg>`}
                     </div>
                     ${!p.inStock ? `<div class="out-of-stock-tag">OUT OF STOCK</div>` : ''}
-                    ${hasDiscount ? `<div style="position:absolute;top:12px;right:12px;background:var(--accent);color:#fff;font-family:'Poppins',sans-serif;font-size:14px;padding:3px 9px;">-${p.discount}%</div>` : ''}
+                    ${hasDiscount ? `<div style="position:absolute;top:12px;right:12px;background:var(--accent);color:#fff;font-family:'Inter',sans-serif;font-size:14px;padding:3px 9px;">-${p.discount}%</div>` : ''}
                     <div class="product-drop-tag">${p.drop}</div>
                 </div>
                 <div class="product-info">
@@ -3435,8 +3302,8 @@
         // item image
         const imgBox = document.getElementById('checkoutItemImg');
         imgBox.innerHTML = modalProduct.image
-            ? `<img src="${modalProduct.image}" style="width:100%;height:100%;object-fit:cover;"><span id="checkoutQtyBadge" style="position:absolute;top:-6px;right:-6px;background:var(--accent);color:#fff;font-size:12px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;">${modalQty}</span>`
-            : `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--zinc2)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span id="checkoutQtyBadge" style="position:absolute;top:-6px;right:-6px;background:var(--accent);color:#fff;font-size:12px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;">${modalQty}</span>`;
+            ? `<img src="${modalProduct.image}" style="width:100%;height:100%;object-fit:cover;"><span id="checkoutQtyBadge" style="position:absolute;top:-6px;right:-6px;background:var(--accent);color:#fff;font-size:12px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;">${modalQty}</span>`
+            : `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--zinc2)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span id="checkoutQtyBadge" style="position:absolute;top:-6px;right:-6px;background:var(--accent);color:#fff;font-size:12px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;">${modalQty}</span>`;
         document.getElementById('checkoutItemName').textContent = modalProduct.name;
         document.getElementById('checkoutItemSize').textContent = modalSize;
         document.getElementById('checkoutItemPrice').textContent = fmtPrice(ep);
@@ -3509,18 +3376,18 @@
         const orderBox = document.getElementById('confirmOrderBox');
         orderBox.innerHTML = `
             <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
-                <span style="font-family:'Poppins',sans-serif;font-size:15px;color:var(--zinc);">SUBTOTAL</span>
-                <span style="font-family:'Poppins',sans-serif;font-size:15px;">${fmtPrice(total)}</span>
+                <span style="font-family:'Inter',sans-serif;font-size:15px;color:var(--zinc);">SUBTOTAL</span>
+                <span style="font-family:'Inter',sans-serif;font-size:15px;">${fmtPrice(total)}</span>
             </div>
             <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
-                <span style="font-family:'Poppins',sans-serif;font-size:15px;color:var(--zinc);">SHIPPING</span>
-                <span style="font-family:'Poppins',sans-serif;font-size:14px;color:var(--zinc2);">Calculated via WhatsApp</span>
+                <span style="font-family:'Inter',sans-serif;font-size:15px;color:var(--zinc);">SHIPPING</span>
+                <span style="font-family:'Inter',sans-serif;font-size:14px;color:var(--zinc2);">Calculated via WhatsApp</span>
             </div>
             <div style="border-top:1px solid var(--border);padding-top:10px;display:flex;justify-content:space-between;">
-                <span style="font-family:'Poppins',sans-serif;font-size:18px;letter-spacing:0.3px;">TOTAL</span>
-                <span style="font-family:'Poppins',sans-serif;font-size:22px;">${fmtPrice(total)}</span>
+                <span style="font-family:'Inter',sans-serif;font-size:18px;letter-spacing:0.3px;">TOTAL</span>
+                <span style="font-family:'Inter',sans-serif;font-size:22px;">${fmtPrice(total)}</span>
             </div>
-            <div style="margin-top:14px;font-family:'Poppins',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.2px;">
+            <div style="margin-top:14px;font-family:'Inter',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.2px;">
                 NAME: ${name}<br>
                 PHONE: ${phone}<br>
                 ADDRESS: ${address}${city ? ', '+city : ''}, ${country}
@@ -3884,7 +3751,7 @@
                 <td style="font-size:14px;">${fmtPrice(p.price)}</td>
                 <td>
                     <input type="number" value="${p.discount||0}" min="0" max="99" step="1"
-                        style="width:70px;background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:'Poppins',sans-serif;font-size:14px;padding:5px 8px;outline:none;"
+                        style="width:70px;background:var(--bg);border:1px solid var(--border);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;padding:5px 8px;outline:none;"
                         onchange="window._setDiscount(${p.id}, this.value)">
                 </td>
                 <td style="font-size:14px;color:var(--green);">${p.discount>0 ? fmtPrice(effectivePrice(p)) : '—'}</td>
@@ -4408,7 +4275,7 @@
         const listEl = document.getElementById('orderList');
         const countEl = document.getElementById('orderCountLabel');
         if (!orders.length) {
-            listEl.innerHTML = `<div style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.3px;padding:40px;text-align:center;">NO ORDERS FOUND</div>`;
+            listEl.innerHTML = `<div style="font-family:'Inter',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.3px;padding:40px;text-align:center;">NO ORDERS FOUND</div>`;
             countEl.textContent = '0 ORDERS';
             return;
         }
@@ -4435,13 +4302,13 @@
                             ${o.tracking ? `<span style="font-size:11px;color:var(--green);letter-spacing:0.2px;">✓ ${o.tracking}</span>` : ''}
                         </div>
                         <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;">
-                            ${statusOptions.map(s => `<button onclick="window._setOrderStatus('${o.key}','${s}')" style="font-family:'Poppins',sans-serif;font-size:10px;letter-spacing:0.2px;padding:4px 10px;cursor:pointer;border:1px solid;background:${s===st?'var(--bg3)':'var(--bg)'};opacity:${s===st?'1':'0.5'};${s==='pending'?'color:#f59e0b;border-color:#f59e0b;':s==='confirmed'?'color:#3b82f6;border-color:#3b82f6;':s==='shipped'?'color:#8b5cf6;border-color:#8b5cf6;':'color:#22c55e;border-color:#22c55e;'}">${s.toUpperCase()}</button>`).join('')}
+                            ${statusOptions.map(s => `<button onclick="window._setOrderStatus('${o.key}','${s}')" style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:0.2px;padding:4px 10px;cursor:pointer;border:1px solid;background:${s===st?'var(--bg3)':'var(--bg)'};opacity:${s===st?'1':'0.5'};${s==='pending'?'color:#f59e0b;border-color:#f59e0b;':s==='confirmed'?'color:#3b82f6;border-color:#3b82f6;':s==='shipped'?'color:#8b5cf6;border-color:#8b5cf6;':'color:#22c55e;border-color:#22c55e;'}">${s.toUpperCase()}</button>`).join('')}
                         </div>
                     </div>
                 </div>
                 <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0;">
                     <div class="order-total">$${o.totalUSD ? o.totalUSD.toFixed(2) : '—'}</div>
-                    <div style="font-family:'Poppins',sans-serif;font-size:12px;color:var(--zinc2);">৳${o.totalBDT ? o.totalBDT.toLocaleString() : '—'}</div>
+                    <div style="font-family:'Inter',sans-serif;font-size:12px;color:var(--zinc2);">৳${o.totalBDT ? o.totalBDT.toLocaleString() : '—'}</div>
                     <button class="action-btn" onclick="window._generateInvoice('${o.key}')" style="color:var(--zinc);">INVOICE</button>
                     <button class="action-btn del" onclick="window._deleteOrder('${o.key}')">DELETE</button>
                 </div>
@@ -4451,7 +4318,7 @@
 
     function loadOrderHistory() {
         const listEl = document.getElementById('orderList');
-        if (listEl) listEl.innerHTML = `<div style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.3px;padding:40px;text-align:center;">LOADING ORDERS...</div>`;
+        if (listEl) listEl.innerHTML = `<div style="font-family:'Inter',sans-serif;font-size:13px;color:var(--zinc2);letter-spacing:0.3px;padding:40px;text-align:center;">LOADING ORDERS...</div>`;
         get(ORDERS_REF).then(snap => {
             const data = snap.val();
             if (!data) {
@@ -4464,7 +4331,7 @@
             filterOrders();
             updateRevenueDashboard(allOrders);
         }).catch(e => {
-            if (listEl) listEl.innerHTML = `<div style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--accent2);letter-spacing:0.3px;padding:40px;text-align:center;">PERMISSION DENIED</div>`;
+            if (listEl) listEl.innerHTML = `<div style="font-family:'Inter',sans-serif;font-size:13px;color:var(--accent2);letter-spacing:0.3px;padding:40px;text-align:center;">PERMISSION DENIED</div>`;
         });
     }
 
@@ -4686,9 +4553,9 @@
         if (!sorted.length) { el.innerHTML = ''; return; }
         el.innerHTML = sorted.map(([name, qty], i) => `
             <div class="stat-card" style="position:relative;">
-                <div style="position:absolute;top:10px;right:12px;font-family:'Poppins',sans-serif;font-size:22px;color:var(--border);">#${i+1}</div>
-                <div style="font-family:'Poppins',sans-serif;font-size:12px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:6px;">SOLD ${qty}x</div>
-                <div style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--white);letter-spacing:0.2px;">${name}</div>
+                <div style="position:absolute;top:10px;right:12px;font-family:'Inter',sans-serif;font-size:22px;color:var(--border);">#${i+1}</div>
+                <div style="font-family:'Inter',sans-serif;font-size:12px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:6px;">SOLD ${qty}x</div>
+                <div style="font-family:'Inter',sans-serif;font-size:13px;color:var(--white);letter-spacing:0.2px;">${name}</div>
             </div>`).join('');
     }
 
@@ -4878,58 +4745,52 @@
         document.getElementById('burgerOverlay').classList.remove('open');
     }
 
-    // ===== THEME & PAGE NAVIGATION =====
-    function toggleTheme() {
-        const body = document.body;
-        const isDark = !body.classList.contains('light-mode');
-        if (isDark) {
-            body.classList.add('light-mode');
-            document.getElementById('themeIconDark').style.display = 'none';
-            document.getElementById('themeIconLight').style.display = 'block';
-            const d2 = document.getElementById('themeIconDark2'); if(d2) d2.style.display='none';
-            const l2 = document.getElementById('themeIconLight2'); if(l2) l2.style.display='block';
-            localStorage.setItem('rdb-theme', 'light');
-            document.getElementById('burgerThemeLabel').textContent = 'DARK MODE';
-            document.getElementById('burgerThemeIcon').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>';
-        } else {
-            body.classList.remove('light-mode');
-            document.getElementById('themeIconDark').style.display = 'block';
-            document.getElementById('themeIconLight').style.display = 'none';
-            const d2 = document.getElementById('themeIconDark2'); if(d2) d2.style.display='block';
-            const l2 = document.getElementById('themeIconLight2'); if(l2) l2.style.display='none';
-            localStorage.setItem('rdb-theme', 'dark');
-            document.getElementById('burgerThemeLabel').textContent = 'LIGHT MODE';
-            document.getElementById('burgerThemeIcon').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+    // ===== LANGUAGE TOGGLE (EN / বাংলা) =====
+    function applyLangToNode(node, lang) {
+        if (node.nodeType === 3) {
+            const parent = node.parentElement;
+            if (!parent) return;
+            if (!parent.dataset.en) parent.dataset.en = node.textContent;
+            const bn = parent.dataset.bn;
+            if (lang === 'bn' && bn) node.textContent = bn;
+            else if (lang === 'en' && parent.dataset.en) node.textContent = parent.dataset.en;
         }
     }
 
-    function showAbout() {
-        document.getElementById('mainSite').style.display = 'none';
-        document.getElementById('aboutPage').classList.add('visible');
-        window.scrollTo(0, 0);
+    function toggleLanguage() {
+        const body = document.body;
+        const toBn = !body.classList.contains('bn-mode');
+        if (toBn) {
+            body.classList.add('bn-mode');
+            localStorage.setItem('rdb-lang', 'bn');
+        } else {
+            body.classList.remove('bn-mode');
+            localStorage.setItem('rdb-lang', 'en');
+        }
+        document.querySelectorAll('[data-bn]').forEach(function(el) {
+            if (!el.dataset.en) el.dataset.en = el.textContent;
+            el.textContent = toBn ? el.dataset.bn : el.dataset.en;
+        });
+        const lbl = document.getElementById('burgerLangLabel');
+        if (lbl) lbl.textContent = toBn ? 'ENGLISH' : 'বাংলা';
     }
+
 
     function showMainSite() {
-        document.getElementById('aboutPage').classList.remove('visible');
-        document.getElementById('mainSite').style.display = 'block';
         window.scrollTo(0, 0);
     }
 
-    // Apply saved theme on load
+    // Apply saved language on load
     document.addEventListener('DOMContentLoaded', function() {
-        const saved = localStorage.getItem('rdb-theme');
-        if (saved === 'light') {
-            document.body.classList.add('light-mode');
-            const dark = document.getElementById('themeIconDark');
-            const light = document.getElementById('themeIconLight');
-            if (dark) dark.style.display = 'none';
-            if (light) light.style.display = 'block';
-            const dark2 = document.getElementById('themeIconDark2');
-            const light2 = document.getElementById('themeIconLight2');
-            if (dark2) dark2.style.display = 'none';
-            if (light2) light2.style.display = 'block';
-            const lbl = document.getElementById('burgerThemeLabel');
-            if (lbl) lbl.textContent = 'DARK MODE';
+        const saved = localStorage.getItem('rdb-lang');
+        if (saved === 'bn') {
+            document.body.classList.add('bn-mode');
+            document.querySelectorAll('[data-bn]').forEach(function(el) {
+                if (!el.dataset.en) el.dataset.en = el.textContent;
+                el.textContent = el.dataset.bn;
+            });
+            const lbl = document.getElementById('burgerLangLabel');
+            if (lbl) lbl.textContent = 'ENGLISH';
         }
     });
 
@@ -4966,7 +4827,7 @@
     window.renderRevenueChart=renderRevenueChart;
     window.saveAnnouncement=saveAnnouncement; window.toggleAnnouncement=toggleAnnouncement;
     window.changePassword=changePassword;
-    window.showAbout=showAbout; window.showMainSite=showMainSite; window.toggleTheme=toggleTheme;
+    window.showMainSite=showMainSite; window.toggleLanguage=toggleLanguage;
     window.toggleBurger=toggleBurger; window.closeBurger=closeBurger;
 
     // ===== INIT =====
@@ -4992,26 +4853,26 @@
 
         <!-- Zoom slider -->
         <div class="crop-controls">
-            <span style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:0.3px;color:var(--zinc2);">ZOOM</span>
+            <span style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.3px;color:var(--zinc2);">ZOOM</span>
             <input type="range" id="cropZoom" min="0.5" max="3" step="0.01" value="1" style="flex:1;accent-color:var(--accent);">
-            <span id="cropZoomVal" style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--zinc2);min-width:36px;">1.0×</span>
+            <span id="cropZoomVal" style="font-family:'Inter',sans-serif;font-size:11px;color:var(--zinc2);min-width:36px;">1.0×</span>
         </div>
 
         <!-- Preview -->
         <div class="crop-preview-label">PRODUCT CARD PREVIEW (800×800 output)</div>
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
             <div>
-                <div style="font-family:'Poppins',sans-serif;font-size:10px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:6px;">CROP RESULT</div>
+                <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:6px;">CROP RESULT</div>
                 <canvas id="cropPreviewCanvas" width="160" height="160" style="border:1px solid var(--border);display:block;background:var(--bg3);"></canvas>
             </div>
             <!-- Simulated product card preview -->
             <div style="flex:1;min-width:180px;">
-                <div style="font-family:'Poppins',sans-serif;font-size:10px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:6px;">PRODUCT CARD PREVIEW</div>
+                <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--zinc2);letter-spacing:0.3px;margin-bottom:6px;">PRODUCT CARD PREVIEW</div>
                 <div style="background:var(--bg2);border:1px solid var(--border);max-width:200px;">
                     <canvas id="cropCardPreview" width="200" height="200" style="display:block;width:100%;"></canvas>
                     <div style="padding:10px;">
-                        <div style="font-family:'Poppins',sans-serif;font-size:13px;margin-bottom:4px;">PRODUCT NAME</div>
-                        <div style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--accent);">$38.00</div>
+                        <div style="font-family:'Inter',sans-serif;font-size:13px;margin-bottom:4px;">PRODUCT NAME</div>
+                        <div style="font-family:'Inter',sans-serif;font-size:13px;color:var(--accent);">$38.00</div>
                     </div>
                 </div>
             </div>
